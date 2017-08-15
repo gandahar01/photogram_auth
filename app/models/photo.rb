@@ -1,7 +1,7 @@
 class Photo < ApplicationRecord
   belongs_to :user  #:required => false
-  has_many :comments
-  has_many :likes
+  has_many :comments, :dependent => :destroy
+  has_many :likes, :dependent => :destroy
   
   has_many :fans, :through => :likes, :source => :user
   
