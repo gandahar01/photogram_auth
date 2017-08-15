@@ -92,13 +92,15 @@
             </li>
           <% else %>
             <li>
-              <a href="/users/edit">
-                 <%= current_user.username %>
-              </a>
+            <a href="/users/edit">
+              <i class="fa fa-fw fa-edit"></i>
+              <%= current_user.username %>
+            </a>
             </li>
             
             <li>
               <a href="/users/sign_out" data-method="delete" rel="nofollow">
+                <i class="fa fa-fw fa-sign-out"></i>
                 Sign Out
               </a>
             </li>
@@ -110,20 +112,33 @@
 
   <div class="container">
     <% if notice.present? %>
-      <div class="alert alert-dismissable alert-success">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <%= notice %>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="alert alert-dismissable alert-success">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <%= notice %>
+        </div>
       </div>
+    </div>
     <% end %>
 
     <% if alert.present? %>
-      <div class="alert alert-dismissable alert-warning">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <%= alert %>
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <div class="alert alert-dismissable alert-warning">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+          <%= alert %>
+        </div>
       </div>
+    </div>
     <% end %>
 
     <%= yield %>
+     <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <hr>
+      </div>
+    </div>
   </div>
 </body>
 </html>
