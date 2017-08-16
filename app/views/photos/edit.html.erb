@@ -1,4 +1,3 @@
-
 <div class="row">
   <div class="col-md-8 col-md-offset-2">
         <!-- Validation failure messages -->
@@ -17,6 +16,7 @@
           Edit Photo
         </h3>
       </div>
+      
       <div class="panel-body">
         <form action="/update_photo/<%= @photo.id %>" method="post">
           <!-- Hidden input for authenticity token to protect from forgery -->
@@ -44,6 +44,7 @@
               Update Photo
             </button>
           </div>
+          
           <div class="form-group">
             <a href="/photos/<%= @photo.id %>" class="btn btn-link btn-block">
               Cancel
